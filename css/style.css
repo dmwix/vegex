@@ -25,13 +25,15 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: var(--verde);
   text-shadow: none;
+  color: var(--verdeclaro);
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: var(--verde);
   text-shadow: none;
+  color: var(--verdeclaro);
 }
 
 /*
@@ -90,6 +92,7 @@ textarea {
   --verde: #528a5c;
   --verdeoscuro: #283e2d;
   --verdeclaro: #f2f7f3;
+  --greencards: rgba(24, 37, 27, 0.9);
 }
 
 body {
@@ -117,12 +120,17 @@ h3,
 h1 {
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 42px;
 }
 
 h2 {
   font-weight: normal;
   font-size: 32px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 28px;
 }
 
 p {
@@ -148,9 +156,15 @@ header {
   width: calc(100% - 64px);
 }
 
+header img {
+  max-height: 55px;
+}
+
 nav {
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 nav ul {
@@ -159,16 +173,30 @@ nav ul {
 
 nav li {
   padding: 0 16px;
-  font-weight: 600;
 }
 
 button {
   background-color: var(--verdeoscuro);
+  font-family: inherit;
+  font-weight: 600;
   color: var(--verdeclaro);
   text-transform: uppercase;
   padding: 14px 24px;
   border: 0;
   border-radius: 24px;
+  letter-spacing: 1.5px;
+  border: var(--verdeoscuro) solid 2px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--verdeclaro);
+  color: var(--verdeoscuro);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ------ MAIN ------ */
@@ -180,23 +208,35 @@ button {
 #hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
   height: 85vh;
   margin-top: 85px;
 }
 
 #heroizq {
   display: grid;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "."
+    "title"
+    "flecha";
+  align-items: center;
 }
 
-#heroizq h2 {
-  justify-self: center;
+#heroizq h1 {
+  grid-area: title;
+}
+
+#heroizq img {
+  grid-area: flecha;
+  align-self: self-end;
 }
 
 .slider {
   width: 100%;
   background-image: url("/img/hero1.jpg");
-  background-position: center;
+  background-position: top 25% center;
   height: 100%;
   border-radius: 32px;
   background-size: cover;
@@ -204,6 +244,10 @@ button {
 
 #somos {
   padding: 80px;
+}
+
+#somos p + p {
+  margin-top: 16px;
 }
 
 #container {
@@ -266,11 +310,84 @@ button {
 .separator {
   width: 100%;
   height: 546px;
+  background-size: cover;
+}
+
+.separator:nth-of-type(1n) {
   background-image: url("/img/separator1.jpg");
+  background-position: center;
+}
+
+.separator:nth-of-type(2n) {
+  background-image: url("/img/separator2.jpg");
+  background-position: bottom;
 }
 
 #diferentes {
-  margin-top: 200px;
+  margin-top: 150px;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: 5fr 1fr 6fr;
+  grid-template-areas: "izq . der";
+  column-gap: 20px;
+}
+
+#izq-fijo {
+  margin-top: 50px;
+  grid-area: izq;
+}
+
+#derecha-scroll {
+  grid-area: der;
+}
+
+#diferentes .bajada {
+  margin-top: 24px;
+}
+.green-card {
+  color: var(--verdeclaro);
+  padding: 56px 64px;
+  border-radius: 64px;
+  background-color: var(--greencards);
+  background-blend-mode: multiply;
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+}
+
+.green-card:first-of-type {
+  background-image: url(/img/card1.jpg);
+}
+
+.green-card:nth-of-type(2n) {
+  background-image: url(/img/card2.jpg);
+}
+
+.green-card + .green-card {
+  margin-top: 64px;
+}
+
+.green-card p + p {
+  margin-top: 8px;
+}
+
+.desc {
+  margin-top: 40px;
+  font-weight: 600;
+}
+
+#beneficios {
+  padding: 120px 0;
+  text-align: center;
+  background-color: white;
+}
+
+#beneficios ul {
+  margin-top: 24px;
+  font-size: 22px;
+}
+
+#beneficios li + li {
+  margin-top: 8px;
 }
 
 #productos {
@@ -281,11 +398,21 @@ button {
   color: var(--verdeclaro);
 }
 
+#productos,
+footer,
+#nos-eligen {
+  padding: 80px;
+}
+
 /* ------ FOOTER ------ */
 
 footer {
   background-color: var(--amarillo);
   border-radius: 32px 32px 0 0;
+}
+
+footer div:first-child {
+  border-bottom: 1.5px solid var(--verdeoscuro);
 }
 
 /* ==========================================================================
