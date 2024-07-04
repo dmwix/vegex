@@ -109,7 +109,8 @@ body {
 h1,
 h2,
 h3,
-.number {
+.number,
+.card {
   font-family: "Lexend Zetta", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -154,6 +155,11 @@ header {
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 64px);
+  transition: box-shadow 0.5s ease-in;
+}
+
+.scrolled {
+  box-shadow: 0px 2px 15px rgb(0 0 0 / 20%);
 }
 
 header img {
@@ -175,10 +181,34 @@ nav li {
   padding: 0 16px;
 }
 
-button {
+nav a {
+  display: inline-block;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  border-radius: 5px;
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background: currentcolor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.btn {
   background-color: var(--verdeoscuro);
   font-family: inherit;
   font-weight: 600;
+  font-size: 14px;
   color: var(--verdeclaro);
   text-transform: uppercase;
   padding: 14px 24px;
@@ -189,7 +219,7 @@ button {
   transition: 0.3s ease;
 }
 
-button:hover {
+.btn:hover {
   background-color: var(--verdeclaro);
   color: var(--verdeoscuro);
 }
@@ -210,7 +240,6 @@ a {
   grid-template-columns: 1fr 1fr;
   column-gap: 20px;
   height: 85vh;
-  margin-top: 85px;
 }
 
 #heroizq {
@@ -400,8 +429,38 @@ a {
 
 #productos,
 footer,
-#nos-eligen {
+#eligen {
   padding: 80px;
+}
+
+#eligen h2 {
+  text-align: center;
+}
+
+#card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  max-width: 300px;
+  font-size: 18px;
+  letter-spacing: -2px;
+}
+
+.icon-container {
+  background-color: var(--verdeoscuro);
+  border-radius: 32px 32px 0 0;
+  padding: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-name {
+  background-color: white;
+  border-radius: 0 0 32px 32px;
+  padding: 40px 32px 32px;
 }
 
 /* ------ FOOTER ------ */
@@ -411,8 +470,18 @@ footer {
   border-radius: 32px 32px 0 0;
 }
 
-footer div:first-child {
+footer > div:first-child {
   border-bottom: 1.5px solid var(--verdeoscuro);
+}
+
+footer > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+footer img {
+  height: 60px;
 }
 
 /* ==========================================================================
