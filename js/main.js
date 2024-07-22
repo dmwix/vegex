@@ -84,3 +84,16 @@ const eligen = document.querySelector("#eligen");
 let fullHeightMinusHeader = 100 * vh - headerHeight;
 hero.style.height = `${fullHeightMinusHeader}px`;
 eligen.style.height = `${fullHeightMinusHeader - 80}px`;
+
+const diferentes = document.querySelector("#diferentes");
+const diferentesPosition = diferentes.offsetTop;
+const izqFijo = document.querySelector("#izq-fijo");
+
+// function halfSticky() {
+//   if (window.scrollY >= diferentesPosition) {
+//     izqFijo.style.position = "sticky";
+//     izqFijo.style.top = `${diferentesPosition + headerHeight}px`;
+//   }
+// }
+
+// window.addEventListener("scroll", halfSticky);
