@@ -17,6 +17,8 @@ const main = document.querySelector("main");
 main.style.marginTop = `${headerHeight}px`;
 const scrolledClass = "scrolled";
 
+document.documentElement.style.scrollPaddingTop = `${headerHeight}px`;
+
 function addHeaderShadow() {
   if (window.scrollY >= 20) {
     if (!header.classList.contains(scrolledClass)) {
