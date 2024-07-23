@@ -478,16 +478,14 @@ footer,
 footer {
   background-color: var(--amarillo);
   border-radius: 32px 32px 0 0;
-}
-
-footer > div:first-child {
-  border-bottom: 1.5px solid var(--verdeoscuro);
-}
-
-footer > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
+  /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "a b"
+    "c d";
+  gap: 64px 20px;
 }
 
 footer img {
