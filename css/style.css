@@ -152,12 +152,26 @@ header {
   position: fixed;
   top: 0;
   background-color: var(--verdeclaro);
-  padding: 20px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: calc(100% - 64px);
-  transition: box-shadow 0.5s ease-in;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 16px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: ". logo menu";
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+#logo {
+  grid-area: logo;
+  justify-self: center;
 }
 
 .scrolled {
@@ -166,6 +180,16 @@ header {
 
 header img {
   max-height: 55px;
+}
+
+#desktop-nav {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #desktop-nav {
+    display: inline-block;
+  }
 }
 
 nav {
@@ -224,6 +248,43 @@ nav a:hover::after {
 .btn:hover {
   background-color: var(--verdeclaro);
   color: var(--verdeoscuro);
+}
+
+header .btn {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  header .btn {
+    display: inline-block;
+  }
+}
+
+#open-menu {
+  grid-area: menu;
+  align-self: center;
+  justify-self: end;
+}
+
+@media only screen and (min-width: 768px) {
+  #open-menu {
+    display: none;
+  }
+}
+
+#fullscreen-menu {
+  display: none;
+}
+
+.mobile-menu {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--verdeoscuro);
+  color: var(--verdeclaro);
 }
 
 a {
