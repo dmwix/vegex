@@ -131,14 +131,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const gap = 20;
 const hero = document.querySelector("#hero");
 const eligen = document.querySelector("#eligen");
 let fullHeightMinusHeader = 100 * vh - headerHeight;
-hero.style.height = `${fullHeightMinusHeader - 20}px`;
-eligen.style.height = `${fullHeightMinusHeader - 80}px`;
+const izqFijo = document.querySelector("#izq-fijo");
 
-const diferentes = document.querySelector("#diferentes");
-const diferentesPosition = diferentes.offsetTop;
+hero.style.height = `${fullHeightMinusHeader - gap}px`;
+eligen.style.height = `${fullHeightMinusHeader - 80}px`;
+izqFijo.style.top = `${headerHeight + gap}px`;
 
 // function halfSticky() {
 //   if (window.scrollY >= diferentesPosition) {
