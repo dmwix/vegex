@@ -6,16 +6,19 @@ document.documentElement.style.setProperty("--vh", `${vh}px`);
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-  let fullHeightMinusHeader = 100 * vh - headerHeight;
-  hero.style.height = `${fullHeightMinusHeader}px`;
+  // let fullHeightMinusHeader = 100 * vh - headerHeight;
   eligen.style.height = `${fullHeightMinusHeader - 80}px`;
 });
 
+const main = document.querySelector("main");
 const header = document.querySelector("header");
 const headerHeight = header.offsetHeight;
-const main = document.querySelector("main");
-main.style.marginTop = `${headerHeight}px`;
+const gap = 20;
+const hero = document.querySelector("#hero");
+let fullHeightMinusHeader = 100 * vh - headerHeight;
 const scrolledClass = "scrolled";
+hero.style.height = `${fullHeightMinusHeader - gap}px`;
+main.style.marginTop = `${headerHeight}px`;
 
 document.documentElement.style.scrollPaddingTop = `${headerHeight}px`;
 
@@ -131,13 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const gap = 20;
-const hero = document.querySelector("#hero");
 const eligen = document.querySelector("#eligen");
-let fullHeightMinusHeader = 100 * vh - headerHeight;
 const izqFijo = document.querySelector("#izq-fijo");
 
-hero.style.height = `${fullHeightMinusHeader - gap}px`;
 eligen.style.height = `${fullHeightMinusHeader - 80}px`;
 izqFijo.style.top = `${headerHeight + gap}px`;
 
