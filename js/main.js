@@ -7,7 +7,7 @@ window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
   // let fullHeightMinusHeader = 100 * vh - headerHeight;
-  eligen.style.height = `${fullHeightMinusHeader - 80}px`;
+  eligen.style.minHeight = `${fullHeightMinusHeader}px`;
 });
 
 const main = document.querySelector("main");
@@ -21,6 +21,28 @@ hero.style.height = `${fullHeightMinusHeader - gap}px`;
 main.style.marginTop = `${headerHeight}px`;
 
 document.documentElement.style.scrollPaddingTop = `${headerHeight}px`;
+
+// FULLSCREEN MENU
+
+const fullscreenMenu = document.getElementById("fullscreen-menu");
+function openNav() {
+  fullscreenMenu.style.display = "flex";
+}
+
+const openMenu = document.getElementById("open-menu");
+openMenu.addEventListener("click", openNav);
+
+function closeNav() {
+  document.getElementById("fullscreen-menu").style.display = "none";
+}
+
+const closeMenu = document.getElementById("close-menu");
+closeMenu.addEventListener("click", closeNav);
+
+const fullscreenMenuLinks = fullscreenMenu.querySelectorAll("a");
+fullscreenMenuLinks.forEach((a) => {
+  a.addEventListener("click", closeNav);
+});
 
 function addHeaderShadow() {
   if (window.scrollY >= 20) {
@@ -137,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const eligen = document.querySelector("#eligen");
 const izqFijo = document.querySelector("#izq-fijo");
 
-eligen.style.height = `${fullHeightMinusHeader - 80}px`;
+eligen.style.minHeight = `${fullHeightMinusHeader}px`;
 izqFijo.style.top = `${headerHeight + gap}px`;
 
 // function halfSticky() {
