@@ -15,6 +15,7 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  scroll-behavior: smooth;
 }
 
 /*
@@ -300,20 +301,38 @@ a {
 
 #hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
   padding-bottom: 20px;
+  grid-template-areas:
+    "slider"
+    "texto";
+}
+
+@media only screen and (min-width: 768px) {
+  #hero {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    grid-template-areas: "texto slider";
+  }
 }
 
 #heroizq {
+  grid-area: texto;
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "."
     "title"
     "flecha";
-  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  #heroizq {
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+      "."
+      "title"
+      "flecha";
+    align-items: center;
+  }
 }
 
 #heroizq h1 {
@@ -334,6 +353,7 @@ a {
 }
 
 .slider {
+  grid-area: slider;
   width: 100%;
   background-image: url("/img/hero1.jpg");
   background-position: top 25% center;
@@ -449,10 +469,14 @@ a {
 #izq-fijo {
   margin-top: 50px;
   grid-area: izq;
+  align-self: self-start;
+  position: sticky;
+  top: 115px;
 }
 
 #derecha-scroll {
   grid-area: der;
+  overflow: hidden;
 }
 
 #diferentes .bajada {
