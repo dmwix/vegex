@@ -471,7 +471,6 @@ a {
   grid-area: izq;
   align-self: self-start;
   position: sticky;
-  top: 115px;
 }
 
 #derecha-scroll {
