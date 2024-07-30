@@ -139,7 +139,6 @@ eligen.style.height = `${fullHeightMinusHeader - 80}px`;
 
 const diferentes = document.querySelector("#diferentes");
 const diferentesPosition = diferentes.offsetTop;
-const izqFijo = document.querySelector("#izq-fijo");
 
 // function halfSticky() {
 //   if (window.scrollY >= diferentesPosition) {
@@ -149,3 +148,16 @@ const izqFijo = document.querySelector("#izq-fijo");
 // }
 
 // window.addEventListener("scroll", halfSticky);
+
+// window.addEventListener("scroll", function () {
+//   let izqFijo = document.querySelector("#izq-fijo");
+//   let rightColumn = document.querySelector("#derecha-scroll");
+//   let rightColumnBottom = rightColumn.getBoundingClientRect().bottom;
+
+//   if (rightColumnBottom <= headerHeight) {
+//     izqFijo.style.position = "relative";
+//   } else {
+//     izqFijo.style.position = "sticky";
+//     izqFijo.style.top = `${headerHeight + 20}px`;
+//   }
+// });
