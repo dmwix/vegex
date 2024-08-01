@@ -22,6 +22,7 @@ hero.style.height = `${fullHeightMinusHeader - gap}px`;
 main.style.marginTop = `${headerHeight}px`;
 
 document.documentElement.style.scrollPaddingTop = `${headerHeight}px`;
+// PARA MOBILE QUE SEA MÁS
 
 // FULLSCREEN MENU
 

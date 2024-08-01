@@ -105,7 +105,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 14px;
+  font-size: 16px;
   background-color: var(--verdeclaro);
   color: var(--verdeoscuro);
 }
@@ -130,7 +130,7 @@ h1 {
 
 h2 {
   font-weight: normal;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 h3 {
@@ -139,10 +139,6 @@ h3 {
 }
 
 @media screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-
   h1 {
     font-size: 42px;
   }
@@ -397,15 +393,11 @@ a {
 
 #heroizq {
   grid-area: texto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "title"
-    "flecha";
 }
 
 @media only screen and (min-width: 768px) {
   #heroizq {
+    display: grid;
     grid-template-rows: 1fr 2fr 1fr;
     grid-template-areas:
       "."
@@ -425,11 +417,19 @@ a {
 }
 
 #flechita {
-  position: relative;
-  z-index: -1;
-  -webkit-animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-    0.7s 4 both;
-  animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.7s 4 both;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #flechita {
+    display: inline;
+    position: relative;
+    z-index: -1;
+    -webkit-animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      0.7s 4 both;
+    animation: shake-bottom 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.7s 4
+      both;
+  }
 }
 
 .slider {
@@ -443,7 +443,7 @@ a {
 }
 
 #somos {
-  padding: 0 16px 80px;
+  padding: 32px 16px 80px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -457,7 +457,7 @@ a {
 }
 
 .bajada {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   padding: 16px 0 32px;
 }
@@ -611,7 +611,7 @@ a {
 
 @media only screen and (min-width: 768px) {
   #diferentes {
-    margin-top: 150px;
+    padding-top: 80px;
     display: grid;
     grid-template-columns: 5fr 1fr 6fr;
     grid-template-areas: "izq . der";
@@ -659,7 +659,7 @@ a {
   }
 
   #beneficios ul {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -674,7 +674,13 @@ a {
 }
 
 #productos h2 {
-  padding: 0 0 40px 80px;
+  padding: 0 16px 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  #productos h2 {
+    padding: 0 0 40px 80px;
+  }
 }
 
 #productos .btn {
@@ -682,9 +688,9 @@ a {
   background-color: var(--botonclaro);
 }
 
-#productos .btn:hover {
-  color: inherit;
-}
+/* #productos .btn:hover {
+  border: var(--verdeclaro) solid 2px;
+} */
 
 .marquees-container {
   display: flex;
@@ -739,15 +745,18 @@ a {
   box-sizing: border-box;
 }
 
+#eligen h2 {
+  margin-bottom: 80px;
+}
+
 @media only screen and (min-width: 768px) {
   #eligen {
     padding: 80px;
   }
-}
 
-#eligen h2 {
-  text-align: center;
-  margin-bottom: 80px;
+  #eligen h2 {
+    text-align: center;
+  }
 }
 
 #card-container {
