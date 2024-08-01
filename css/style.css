@@ -456,9 +456,6 @@ a {
   margin-top: 16px;
 }
 
-#container {
-}
-
 .bajada {
   font-size: 14px;
   font-weight: 500;
@@ -689,30 +686,51 @@ a {
   color: inherit;
 }
 
+.marquees-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .marquee {
-  position: relative;
-  width: 100vw;
+  display: flex;
   overflow: hidden;
-  white-space: nowrap;
+  gap: 1rem;
+  position: relative;
+  user-select: none;
 }
 
 .marquee-content {
+  flex-shrink: 0;
   display: flex;
-  animation: scroll 20s linear infinite;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 1rem;
 }
 
-.marquee-content .btn {
-  display: inline-block;
-  margin: 0 5px;
-  font-size: 16px;
+.scroll {
+  animation: scroll 40s linear infinite;
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0%);
+  from {
+    transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.reverse {
+  animation: reverseScroll 40s linear infinite;
+}
+
+@keyframes reverseScroll {
+  from {
+    transform: translateX(calc(-100% - 1rem));
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
