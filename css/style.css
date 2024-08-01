@@ -715,7 +715,7 @@ a {
 }
 
 .scroll {
-  animation: scroll 40s linear infinite;
+  animation: scroll 50s linear infinite;
 }
 
 @keyframes scroll {
@@ -728,7 +728,7 @@ a {
 }
 
 .reverse {
-  animation: reverseScroll 40s linear infinite;
+  animation: reverseScroll 50s linear infinite;
 }
 
 @keyframes reverseScroll {
@@ -745,10 +745,6 @@ a {
   box-sizing: border-box;
 }
 
-#eligen h2 {
-  margin-bottom: 80px;
-}
-
 @media only screen and (min-width: 768px) {
   #eligen {
     padding: 80px;
@@ -760,6 +756,7 @@ a {
 }
 
 #card-container {
+  padding-top: 40px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -768,7 +765,6 @@ a {
 
 .card {
   width: 100%;
-  font-size: 12px;
 }
 
 .card img {
@@ -778,7 +774,7 @@ a {
 .icon-container {
   background-color: var(--verdeoscuro);
   border-radius: 32px 32px 0 0;
-  padding: 24px;
+  padding: 32px 0;
   display: flex;
   justify-content: center;
 }
@@ -786,12 +782,15 @@ a {
 .card-name {
   background-color: white;
   border-radius: 0 0 32px 32px;
-  padding: 40px 32px 32px;
+  padding: 24px 0;
+  text-align: center;
   font-size: 14px;
+  border: var(--verdeoscuro) 1px solid;
 }
 
 @media only screen and (min-width: 768px) {
   #card-container {
+    padding-top: 80px;
     display: flex;
     justify-content: center;
     column-gap: 20px;
@@ -812,6 +811,7 @@ a {
   .card-name {
     padding: 40px 16px 32px;
     font-size: 18px;
+    border: 0;
   }
 
   .card img {
@@ -825,30 +825,62 @@ footer {
   background-color: var(--amarillo);
   border-radius: 32px 32px 0 0;
   padding: 50px 16px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* display: grid;
   grid-template-areas:
     "a"
     "b"
     "d"
     "c";
-  row-gap: 16px;
+  row-gap: 16px; */
+}
+
+footer > div:first-child {
+  border-bottom: var(--verdeoscuro) 1px solid;
+  padding-bottom: 20px;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+}
+
+#info p {
+  padding-bottom: 16px;
 }
 
 @media only screen and (min-width: 768px) {
   footer {
-    padding: 80px 80px 0;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    padding: 80px 80px 56px;
+    /* grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "a b"
       "c d";
-    gap: 64px 20px;
+    gap: 64px 20px; */
+  }
+
+  footer > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  footer img {
+    order: 1;
   }
 }
 
 footer img {
   height: 60px;
-  grid-area: d;
+  /* grid-area: d; */
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* ------------ KEYFRAMES ------------ */
