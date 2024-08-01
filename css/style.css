@@ -693,15 +693,15 @@ a {
   position: relative;
   width: 100vw;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .marquee-content {
   display: flex;
-  white-space: nowrap;
   animation: scroll 20s linear infinite;
 }
 
-.marquee-content div {
+.marquee-content .btn {
   display: inline-block;
   margin: 0 5px;
   font-size: 16px;
@@ -709,10 +709,10 @@ a {
 
 @keyframes scroll {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
