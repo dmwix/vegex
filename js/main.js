@@ -10,6 +10,7 @@ window.addEventListener("resize", () => {
   eligen.style.minHeight = `${fullHeightMinusHeader}px`;
 });
 
+const body = document.querySelector("body");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
 const headerHeight = header.offsetHeight;
@@ -27,6 +28,8 @@ document.documentElement.style.scrollPaddingTop = `${headerHeight}px`;
 const fullscreenMenu = document.getElementById("fullscreen-menu");
 function openNav() {
   fullscreenMenu.style.display = "flex";
+  body.style.overflowY = "hidden";
+  // HACER ESTO CON UNA CLASE EN CSS
 }
 
 const openMenu = document.getElementById("open-menu");
@@ -34,6 +37,7 @@ openMenu.addEventListener("click", openNav);
 
 function closeNav() {
   document.getElementById("fullscreen-menu").style.display = "none";
+  body.style.overflowY = "visible";
 }
 
 const closeMenu = document.getElementById("close-menu");
@@ -160,7 +164,7 @@ const eligen = document.querySelector("#eligen");
 const izqFijo = document.querySelector("#izq-fijo");
 
 eligen.style.minHeight = `${fullHeightMinusHeader}px`;
-izqFijo.style.top = `${headerHeight + gap}px`;
+izqFijo.style.top = `${headerHeight + 80}px`;
 
 // function halfSticky() {
 //   if (window.scrollY >= diferentesPosition) {
