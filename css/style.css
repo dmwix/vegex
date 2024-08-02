@@ -110,10 +110,20 @@ body {
   color: var(--verdeoscuro);
 }
 
+p {
+  margin: 0 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
-.number,
+.counter-title,
 .card {
   font-family: "Lexend Zetta", sans-serif;
   font-optical-sizing: auto;
@@ -152,16 +162,6 @@ h3 {
   }
 }
 
-p {
-  margin: 0 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
 /* ------------ HEADER ------------ */
 
 header {
@@ -169,13 +169,13 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
-  padding: 20px 16px;
   background-color: var(--verdeclaro);
   box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 20px 16px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: ". logo menu";
-  overflow-x: hidden;
 }
 
 #open-menu img {
@@ -186,11 +186,11 @@ header {
 @media screen and (min-width: 992px) {
   header {
     padding: 20px 32px;
+    text-align: center;
     display: flex;
-    gap: 20px;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
+    gap: 20px;
   }
 }
 
@@ -443,7 +443,7 @@ a {
 }
 
 #somos {
-  padding: 32px 16px 80px;
+  padding: 40px 16px 80px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -472,24 +472,6 @@ a {
   margin-bottom: 80px;
 }
 
-#counters {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.counter-box {
-  background-color: white;
-  border-radius: 64px;
-  padding: 72px 24px 0px;
-  height: 270px;
-  width: 80%;
-}
-
 @media only screen and (min-width: 768px) {
   #container {
     display: grid;
@@ -507,49 +489,83 @@ a {
     aspect-ratio: 1280/474;
     background-size: contain;
   }
-
-  #counters {
-    flex-direction: row;
-    padding: 0 64px;
-  }
-
-  .counter-box {
-    width: 270px;
-  }
 }
 
-.icon {
-  text-align: center;
-  margin-bottom: 40px;
+/* ------------ COUNTERS ------------ */
+
+#counters-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.number {
-  margin-bottom: 16px;
+.counter-box {
+  background-color: white;
+  border-radius: 64px;
+  padding: 64px 72px;
+  height: 160px;
+}
+
+.counter-icon {
   text-align: center;
-  font-size: 32px;
+  padding-bottom: 16px;
+}
+
+.counter-title {
+  text-align: center;
+  font-size: 24px;
   font-weight: 400;
-}
-
-.number {
   display: flex;
   justify-content: center;
   gap: 0.3em;
+  padding-bottom: 8px;
 }
 
-.value {
+.counter-value {
   width: 2ch;
 }
 
-.counter-box:first-child .value {
+.counter-box:first-child .counter-value {
   width: 7ch;
 }
 
-.description {
+.counter-description {
   font-family: "Raleway", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   text-align: center;
 }
+
+@media only screen and (min-width: 768px) {
+  #counters-container {
+    flex-direction: row;
+    gap: 64px;
+    justify-content: center;
+  }
+
+  .counter-box {
+    padding: 64px 40px 24px;
+    width: 272px;
+    height: 240px;
+    /* box-sizing: content-box; */
+  }
+
+  .counter-icon {
+    padding-bottom: 40px;
+  }
+
+  .counter-title {
+    margin-bottom: 16px;
+    font-size: 32px;
+  }
+
+  .counter-description {
+    font-size: 18px;
+  }
+}
+
+/* ---------------------------------------otra cosa */
 .separator {
   width: 100%;
   height: 546px;
@@ -566,13 +582,14 @@ a {
   background-position: bottom;
 }
 
-#diferentes {
+/* #diferentes {
   margin-bottom: 80px;
-}
+} */
 
-#izq-fijo {
+/* #izq-fijo {
   margin-top: 50px;
-}
+} */
+
 #derecha-scroll {
   grid-area: der;
   overflow: hidden;
@@ -609,9 +626,13 @@ a {
   font-weight: 600;
 }
 
+#diferentes {
+  padding: 80px 16px;
+}
+
 @media only screen and (min-width: 768px) {
   #diferentes {
-    padding-top: 80px;
+    padding: 80px;
     display: grid;
     grid-template-columns: 5fr 1fr 6fr;
     grid-template-areas: "izq . der";
@@ -626,7 +647,7 @@ a {
     grid-area: izq;
     align-self: self-start;
     position: sticky;
-    margin: 50px 0px;
+    /* margin: 50px 0px; */
   }
 
   .green-card {
@@ -653,11 +674,43 @@ a {
   font-size: 16px;
 }
 
-@media only screen and (min-width: 768px) {
-  #beneficios {
-    padding: 120px 0;
-  }
+#beneficios li {
+  opacity: 0;
+  animation: fade-in 2100ms forwards;
+}
 
+#beneficios li:nth-child(1) {
+  animation-delay: 300ms;
+}
+#beneficios li:nth-child(2) {
+  animation-delay: 600ms;
+}
+#beneficios li:nth-child(3) {
+  animation-delay: 900ms;
+}
+#beneficios li:nth-child(4) {
+  animation-delay: 1200ms;
+}
+#beneficios li:nth-child(5) {
+  animation-delay: 1500ms;
+}
+#beneficios li:nth-child(6) {
+  animation-delay: 1800ms;
+}
+#beneficios li:nth-child(7) {
+  animation-delay: 2100ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   #beneficios ul {
     font-size: 20px;
   }
