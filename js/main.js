@@ -112,7 +112,7 @@ window.addEventListener("scroll", addHeaderShadow);
 // });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".value");
+  const counters = document.querySelectorAll(".counter-value");
   const duration = 1000; // Total duration of the animation in milliseconds
 
   const formatNumber = (number) => {
