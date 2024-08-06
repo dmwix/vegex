@@ -305,7 +305,7 @@ header .btn {
 
 #fullscreen-menu {
   display: none;
-  animation-duration: 250ms;
+  animation-duration: 200ms;
 }
 
 .fullscreen-menu-opened #fullscreen-menu {
