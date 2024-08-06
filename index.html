@@ -6,8 +6,6 @@
     <title>Vegetal Express</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta name="description" content="" />
-    <!-- BORRAR DESPUÉS EL ROBOTS -->
-    <meta name="robots" content="noindex" />
 
     <meta property="og:title" content="" />
     <meta property="og:type" content="" />
@@ -19,6 +17,10 @@
     <link rel="apple-touch-icon" href="icon.png" />
 
     <link rel="manifest" href="site.webmanifest" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,30 +46,37 @@
       </nav>
       <a href="#contacto" class="btn">contacto</a>
       <span id="open-menu">
-        <img src="img/menu.svg" alt="open menu icon">
-    </span>
-    <nav id="fullscreen-menu" class="mobile-menu">
+        <img src="img/menu.svg" alt="open menu icon" />
+      </span>
+      <nav id="fullscreen-menu" class="mobile-menu animate__animated">
         <a href="javascript:void(0)" id="close-menu">
-            <img src="img/close-menu.svg" alt="close menu icon">
+          <img src="img/close-menu.svg" alt="close menu icon" />
         </a>
         <ul class="mobile-menu-content">
           <li><a href="#somos">quiénes somos</a></li>
           <li><a href="#diferentes">qué nos hace diferentes </a></li>
           <li><a href="#productos">nuestros productos</a></li>
           <li><a href="#eligen">quiénes nos eligen</a></li>
-          <li><a href="#contacto" class="btn">contacto</a>
-          </li>
-          </ul> 
+          <li><a href="#contacto" class="btn">contacto</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
       <div class="seccion" id="hero">
-        <div class="slider"></div>
+        <div class="slider animate__animated animate__fadeIn"></div>
 
-        <div id="heroizq">
-          <h1>de la huerta <br />a tu casa</h1>
+        <div id="hero-txt">
+          <div id="hero-title">
+            <h1 class="animate__animated animate__fadeInUp">de la huerta</h1>
+            <h1 class="animate__animated animate__fadeInUp">a tu casa</h1>
+          </div>
           <a href="#somos">
-            <img src="img/arrow-down.svg" alt="" id="flechita" />
+            <img
+              src="img/arrow-down.svg"
+              alt=""
+              id="down-arrow"
+              class="animate__animated animate__shakeY" />
           </a>
         </div>
       </div>
@@ -87,19 +96,25 @@
             </p>
           </div>
         </div>
-        <div id="foto-somos"></div>
+        <div id="foto-somos" class="animate__animated animate__fadeIn"></div>
 
         <div id="counters-container">
           <div class="counter-box">
-            <div class="counter-icon"><img src="img/counter-icon1.svg" alt="" /></div>
+            <div class="counter-icon">
+              <img src="img/counter-icon1.svg" alt="" />
+            </div>
             <div class="counter-title">
               <div class="counter-value" akhi="9795480">0</div>
               kg
             </div>
-            <div class="counter-description">Vegetales procesados en el último año</div>
+            <div class="counter-description">
+              Vegetales procesados en el último año
+            </div>
           </div>
           <div class="counter-box">
-            <div class="counter-icon"><img src="img/counter-icon2.svg" alt="" /></div>
+            <div class="counter-icon">
+              <img src="img/counter-icon2.svg" alt="" />
+            </div>
             <div class="counter-title">
               <div class="counter-value" akhi="30">0</div>
               años
@@ -107,7 +122,9 @@
             <div class="counter-description">En el mercado</div>
           </div>
           <div class="counter-box">
-            <div class="counter-icon"><img src="img/counter-icon3.svg" alt="" /></div>
+            <div class="counter-icon">
+              <img src="img/counter-icon3.svg" alt="" />
+            </div>
             <div class="counter-title">
               + de
               <div class="counter-value" akhi="30">0</div>
@@ -120,7 +137,7 @@
       <div class="separator"></div>
 
       <div class="seccion" id="diferentes">
-        <div id="izq-fijo">
+        <div id="izq-sticky">
           <h2>Qué nos hace diferentes</h2>
           <div class="bajada">
             <p>
@@ -133,7 +150,7 @@
         <div id="derecha-scroll">
           <div class="green-card">
             <h3>Food safety</h3>
-            <div class="desc">
+            <div class="green-card-description">
               <p>Nuestra planta cuenta con certificación HACCP y BPM.</p>
               <p>
                 Contamos con laboratorio microbiológico en planta, lo que nos
@@ -170,7 +187,7 @@
 
       <div id="beneficios">
         <h3>Beneficios</h3>
-        <ul>
+        <ul id="beneficios-lista">
           <li>Inocuidad</li>
           <li>Control exacto de porciones</li>
           <li>Cero desperdicio</li>
@@ -185,9 +202,8 @@
 
       <div class="seccion" id="productos">
         <h2>Nuestros productos</h2>
-        
-        <div class="marquees-container">
 
+        <div class="marquees-container">
           <div class="marquee">
             <div class="marquee-content scroll">
               <div class="btn">Cebolla Brunoise</div>
@@ -206,95 +222,95 @@
               <div class="btn">Cebolla Pluma</div>
             </div>
           </div>
-            
-            <div class="marquee">
-              <div class="marquee-content reverse">
-                <div class="btn">Cebollón Pelado</div>
-                <div class="btn">Espinaca Cortada</div>
-                <div class="btn">Lechuga Capuchina corte mix</div>
-                <div class="btn">Lechuga Capuchina en tiras</div>
-                <div class="btn">Lechuga Francesa corte mix</div>
-              </div>
-              <div class="marquee-content reverse">
-                <div class="btn">Cebollón Pelado</div>
-                <div class="btn">Espinaca Cortada</div>
-                <div class="btn">Lechuga Capuchina corte mix</div>
-                <div class="btn">Lechuga Capuchina en tiras</div>
-                <div class="btn">Lechuga Francesa corte mix</div>
-              </div>
-            </div>
 
-            <div class="marquee">
-              <div class="marquee-content scroll">
-                <div class="btn">Lechuga Francesa en hoja</div>
-                <div class="btn">Lechuga Morada corte mix</div>
-                <div class="btn">Lechuga Romana corte mix</div>
-                <div class="btn">Morrón cortado</div>
-                <div class="btn">Rúcula</div>
-                <div class="btn">Tomate Cherry</div>
-              </div>
-              <div class="marquee-content scroll">
-                <div class="btn">Lechuga Francesa en hoja</div>
-                <div class="btn">Lechuga Morada corte mix</div>
-                <div class="btn">Lechuga Romana corte mix</div>
-                <div class="btn">Morrón cortado</div>
-                <div class="btn">Rúcula</div>
-                <div class="btn">Tomate Cherry</div>
-              </div>
+          <div class="marquee">
+            <div class="marquee-content reverse">
+              <div class="btn">Cebollón Pelado</div>
+              <div class="btn">Espinaca Cortada</div>
+              <div class="btn">Lechuga Capuchina corte mix</div>
+              <div class="btn">Lechuga Capuchina en tiras</div>
+              <div class="btn">Lechuga Francesa corte mix</div>
             </div>
-            
-            <div class="marquee">
-              <div class="marquee-content reverse">
-                <div class="btn">Tomate Redondo</div>
-                <div class="btn">Zanahoria Rallada</div>
-                <div class="btn">Cole Slaw</div>
-                <div class="btn">Mix de la Huerta</div>
-                <div class="btn">Mix Florencia</div>
-                <div class="btn">Mix Invierno</div>
-                <div class="btn">Mix Italiana</div>
-                <div class="btn">Mix Otoño</div>
-              </div>
-              <div class="marquee-content reverse">
-                <div class="btn">Tomate Redondo</div>
-                <div class="btn">Zanahoria Rallada</div>
-                <div class="btn">Cole Slaw</div>
-                <div class="btn">Mix de la Huerta</div>
-                <div class="btn">Mix Florencia</div>
-                <div class="btn">Mix Invierno</div>
-                <div class="btn">Mix Italiana</div>
-                <div class="btn">Mix Otoño</div>
-              </div>
+            <div class="marquee-content reverse">
+              <div class="btn">Cebollón Pelado</div>
+              <div class="btn">Espinaca Cortada</div>
+              <div class="btn">Lechuga Capuchina corte mix</div>
+              <div class="btn">Lechuga Capuchina en tiras</div>
+              <div class="btn">Lechuga Francesa corte mix</div>
+            </div>
+          </div>
+
+          <div class="marquee">
+            <div class="marquee-content scroll">
+              <div class="btn">Lechuga Francesa en hoja</div>
+              <div class="btn">Lechuga Morada corte mix</div>
+              <div class="btn">Lechuga Romana corte mix</div>
+              <div class="btn">Morrón cortado</div>
+              <div class="btn">Rúcula</div>
+              <div class="btn">Tomate Cherry</div>
+            </div>
+            <div class="marquee-content scroll">
+              <div class="btn">Lechuga Francesa en hoja</div>
+              <div class="btn">Lechuga Morada corte mix</div>
+              <div class="btn">Lechuga Romana corte mix</div>
+              <div class="btn">Morrón cortado</div>
+              <div class="btn">Rúcula</div>
+              <div class="btn">Tomate Cherry</div>
+            </div>
+          </div>
+
+          <div class="marquee">
+            <div class="marquee-content reverse">
+              <div class="btn">Tomate Redondo</div>
+              <div class="btn">Zanahoria Rallada</div>
+              <div class="btn">Cole Slaw</div>
+              <div class="btn">Mix de la Huerta</div>
+              <div class="btn">Mix Florencia</div>
+              <div class="btn">Mix Invierno</div>
+              <div class="btn">Mix Italiana</div>
+              <div class="btn">Mix Otoño</div>
+            </div>
+            <div class="marquee-content reverse">
+              <div class="btn">Tomate Redondo</div>
+              <div class="btn">Zanahoria Rallada</div>
+              <div class="btn">Cole Slaw</div>
+              <div class="btn">Mix de la Huerta</div>
+              <div class="btn">Mix Florencia</div>
+              <div class="btn">Mix Invierno</div>
+              <div class="btn">Mix Italiana</div>
+              <div class="btn">Mix Otoño</div>
             </div>
           </div>
         </div>
+      </div>
 
       <div class="seccion" id="eligen">
         <h2>Quiénes nos eligen</h2>
         <div id="card-container">
           <div class="card">
             <div class="icon-container">
-              <img src="/img/icon-cart.svg" alt="" />
+              <img src="/img/icon-cart.svg" alt="" class="eligen-icon" />
             </div>
             <div class="card-name">Supermercados</div>
           </div>
 
           <div class="card">
             <div class="icon-container">
-              <img src="/img/icon-bell.svg" alt="" />
+              <img src="/img/icon-bell.svg" alt="" class="eligen-icon" />
             </div>
             <div class="card-name">Caterings</div>
           </div>
 
           <div class="card">
             <div class="icon-container">
-              <img src="/img/icon-chef.svg" alt="" />
+              <img src="/img/icon-chef.svg" alt="" class="eligen-icon" />
             </div>
             <div class="card-name">Restaurantes</div>
           </div>
 
           <div class="card">
             <div class="icon-container">
-              <img src="/img/icon-cross.svg" alt="" />
+              <img src="/img/icon-cross.svg" alt="" class="eligen-icon" />
             </div>
             <div class="card-name">Hospitales</div>
           </div>
@@ -311,14 +327,25 @@
             Déjanos tu mensaje
           </p>
           Tel: 11 8031 - 2348 <br />
-          Mail: <a href="mailto:info@lacteosygelato.com.ar">info@lacteosygelato.com.ar</a>
+          Mail:
+          <a href="mailto:info@lacteosygelato.com.ar"
+            >info@lacteosygelato.com.ar</a
+          >
         </div>
       </div>
       <div>
         <img src="/img/logo-contacto.png" alt="" />
         <div>
           <p>© 2024 Vegetal Express</p>
-          <p>Diseño y desarrollo web: <a href="https://maniowicz.com/" target="_blank" rel="noopener noreferrer">Maniowicz</a></p>
+          <p>
+            Diseño y desarrollo web:
+            <a
+              href="https://maniowicz.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Maniowicz</a
+            >
+          </p>
         </div>
       </div>
     </footer>
